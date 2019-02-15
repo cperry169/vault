@@ -735,7 +735,7 @@ func (c *Client) RawRequestWithContext(ctx context.Context, r *Request) (*Respon
 
 	redirectCount := 0
 START:
-	req, err := r.ToRetryableHTTP()
+	req, err := r.toRetryableHTTP()
 	if err != nil {
 		return nil, err
 	}
