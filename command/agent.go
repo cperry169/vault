@@ -351,7 +351,7 @@ func (c *AgentCommand) Run(args []string) int {
 
 		// Create a muxer and add paths relevant for the lease cache layer
 		mux := http.NewServeMux()
-		mux.Handle("/v1/agent/cache-clear", leaseCache.HandleCacheClear(ctx))
+		mux.Handle("/agent/cache-clear", leaseCache.HandleCacheClear(ctx))
 
 		mux.Handle("/", cache.Handler(ctx, cacheLogger, leaseCache, config.Cache.UseAutoAuthToken, c.client))
 
